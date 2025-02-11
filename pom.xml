@@ -6,7 +6,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- Spring Boot Parent for dependency management -->
+	<!-- Inherit from Spring Boot Parent for dependency management -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,67 +18,67 @@
 	<artifactId>movie-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>movie-api</name>
-	<description>Spring Boot Movie API with Performance Optimization (Task 2)</description>
+	<description>Spring Boot Movie API with Performance Optimizations and Automated Tests</description>
 
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
-		<!-- Spring Boot Web Starter for RESTful APIs -->
+		<!-- Spring Boot Web Starter: for building RESTful APIs -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- Spring Boot Data JPA Starter for database access -->
+		<!-- Spring Boot Data JPA: for ORM and database operations -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<!-- H2 Database for in-memory development/testing -->
+		<!-- H2 Database: in-memory DB for development/testing -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- EhCache (v3.x) for JCache integration as caching provider -->
+		<!-- EhCache: used as the caching provider (via JCache) -->
 		<dependency>
 			<groupId>org.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
 			<version>3.10.8</version>
 		</dependency>
 
-		<!-- JCache API (JSR-107) -->
+		<!-- JCache API (JSR-107): for standardized caching support -->
 		<dependency>
 			<groupId>javax.cache</groupId>
 			<artifactId>cache-api</artifactId>
 			<version>1.1.1</version>
 		</dependency>
 
-		<!-- Hibernate JCache integration module -->
+		<!-- Hibernate JCache Integration: provides the JCacheRegionFactory -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-jcache</artifactId>
 			<version>6.6.5.Final</version>
 		</dependency>
 
-		<!-- Spring Boot Actuator for monitoring and performance metrics -->
+		<!-- Spring Boot Actuator: for application monitoring and metrics -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<!-- Lombok (optional) to reduce boilerplate code -->
+		<!-- Lombok: reduces boilerplate code (e.g., getters/setters) -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Spring Boot DevTools for automatic restart during development -->
+		<!-- Spring Boot DevTools: enables automatic restart during development -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -86,17 +86,33 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Spring Boot Starter Test for testing support -->
+		<!-- Spring Boot Starter Test: includes JUnit 5, Mockito, and other testing libraries -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-			<!-- Spring Boot Maven Plugin for packaging and running the application -->
+			<!-- Spring Boot Maven Plugin: packages and runs the application -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
